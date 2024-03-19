@@ -146,12 +146,12 @@ public class DataCalToolsImpl implements DataCalTools {
         List<String> newintend = intend.stream()
                 .map(s -> s.substring(1)) // 去除每个元素开头的'a'
                 .collect(Collectors.toList());
-        List<Integer> subGraphlist = Stream.concat(extend.stream(), newintend.stream() ) // 合并两个流
-                .map(Integer::parseInt) // 将String转换为Integer
-                .collect(Collectors.toList()); // 收集到List中
+        List<Integer> subGraphlist = Stream.concat(extend.stream(), newintend.stream() ) 
+                .map(Integer::parseInt) 
+                .collect(Collectors.toList()); 
         int[] subGraph = subGraphlist.stream().mapToInt(i -> i).toArray();
 
-        int[] attrNum = new int[DataPara.hs.size()];     //用于统计当前clique中各个属性值对应的节点个数
+        int[] attrNum = new int[DataPara.hs.size()];     
         Arrays.stream(subGraph).forEach(i -> {
             int attr_j = nodes.get(i).getValue();
             attrNum[attr_j-1] ++;
