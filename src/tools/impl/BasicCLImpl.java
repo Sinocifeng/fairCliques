@@ -40,7 +40,6 @@ public class BasicCLImpl implements BasicCL {
     public HashMap<String, ArrayList<String>> buildDict(int[][] adjMat, ArrayList<String> obj, ArrayList<String> attr, Integer numObj, Integer numAttr) {
         HashMap<String, ArrayList<String>> dictTemp = new HashMap<>();
 
-        // 构建对象-属性的映射关系
         IntStream.range(0, numObj).forEach(i -> {
             ArrayList<String> relatedAttr = new ArrayList<>();
             IntStream.range(0, numAttr)
@@ -51,7 +50,7 @@ public class BasicCLImpl implements BasicCL {
                     });
             dictTemp.put(obj.get(i), relatedAttr);
         });
-        // 构建属性-对象的映射关系
+        
         IntStream.range(0, numAttr).forEach(i -> {
             ArrayList<String> relatedObj = new ArrayList<>();
             IntStream.range(0, numObj)
@@ -72,12 +71,12 @@ public class BasicCLImpl implements BasicCL {
         }
         for (int i = 0; i < attr.size(); i++) {
             ArrayList<ArrayList<String>> objTemp = new ArrayList<>(DataPara.objResult);
-            ArrayList<String> oneObj = bpcAttr.get(i).getR(); // 获取属性i对应的所有对象
-            objTemp.forEach(temp -> temp.retainAll(oneObj)); // 保留在指定集合oneObj中也存在的元素
+            ArrayList<String> oneObj = bpcAttr.get(i).getR(); 
+            objTemp.forEach(temp -> temp.retainAll(oneObj));
             DataPara.objResult.addAll(objTemp);
         }
 
-        DataPara.objResult.removeIf(ArrayList::isEmpty); // 移除空内容的集合
+        DataPara.objResult.removeIf(ArrayList::isEmpty); 
         return DataPara.objResult;
     }
 
