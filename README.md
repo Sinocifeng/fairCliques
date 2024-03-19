@@ -1,5 +1,21 @@
-# fairCliques: fairness-aware maximal clique
+## FairCliques :  fairness-aware maximal clique
 
-- We are currently organizing the code for the thesis, and we anticipate that all relevant code will be finalized in the repository no later than the end of April 2024.
+### 1. Introduction
 
-- 我们目前正在整理论文的代码，预计所有相关代码将在 2024 年 4 月月底之前在存储库中完成提交。
+- You need to introduce a `jxl` jar package to assist in the processing of `.xsl` files during the process. During the running of my program, `jxl-2.6.jar` is used.
+- The file name of the data source file can be configured in the `DataPara.java` file under `src/staticData/`. Just modify the `fileName` parameter to the name of your data source file. 
+
+### 2. Process raw data
+
+- **First**, You need to run the `main` method in the ` src\DataPreprocessing.java ` file to process the original data. In this process.
+
+- the method `getAttrValue()` that generates node attributes in the code can be modified according to the attribute assignment method you want. I only wrote randomly generated code here.
+
+### 3. Run
+
+**Then**, you can run the main method in `src/Entrance.java`, which will eventually produce an `.xsl` file. Our results are all displayed in this `.xsl` file.
+
+### 4. about choosing edges with probability `p`
+
+- Related processing methods, please see `src/ChooseEdge.java`
+- If you want to modify the probability `p` of the sampling edge, please modify the parameter `probability`.
