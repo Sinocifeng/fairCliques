@@ -17,9 +17,9 @@ public class ConceptLatticeToolsImpl implements ConceptLatticeTools {
     @Override
     public void generateConceptLattice(int[][] adjMat, Map<Integer, Node> nodes) {
         BasicCL basicCL = new BasicCLImpl();
-        DataPara.bpcAttr = basicCL.getBPCliqueAttr(adjMat, DataPara.obj, DataPara.attr, DataPara.numObj, DataPara.numObj); //属性-对象pair
-        DataPara.dictAll = basicCL.buildDict(adjMat, DataPara.obj, DataPara.attr, DataPara.numObj, DataPara.numObj);       //对象-属性pair&&属性-对象pair
-        DataPara.objResult = basicCL.objResult(DataPara.attr, DataPara.obj, DataPara.bpcAttr, DataPara.dictAll);   //计算当前属性对应对象集以及与之前其他属性对应的所有对象集合之间的交集
+        DataPara.bpcAttr = basicCL.getBPCliqueAttr(adjMat, DataPara.obj, DataPara.attr, DataPara.numObj, DataPara.numObj); 
+        DataPara.dictAll = basicCL.buildDict(adjMat, DataPara.obj, DataPara.attr, DataPara.numObj, DataPara.numObj);       
+        DataPara.objResult = basicCL.objResult(DataPara.attr, DataPara.obj, DataPara.bpcAttr, DataPara.dictAll);   
         DataPara.CL = basicCL.FinalBpcAll(DataPara.objResult, DataPara.dictAll);
 
         for (Pair<ArrayList<String>, ArrayList<String>> pair : DataPara.CL) {
