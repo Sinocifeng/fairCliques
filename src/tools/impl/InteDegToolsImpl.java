@@ -9,11 +9,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-/** function:
- * 1.进行概念兴趣度计算
- * 2.用于向控制台显示计算的结果
- * */
-
 public class InteDegToolsImpl implements InteDegTools {
 
 
@@ -66,7 +61,7 @@ public class InteDegToolsImpl implements InteDegTools {
             if (Supp(MaxNonGen1, DataPara.dictAll) == size){
                 MaxNonGen1.remove(Integer.valueOf(a));
             }else {
-//                System.out.println(a +"并入集合MaxNonGen1");
+                //System.out.println(a +"并入集合MaxNonGen1");
             }
         }
         return MaxNonGen1;
