@@ -20,7 +20,7 @@ public class PrepareDataImpl implements PrepareData {
     public void prepareWork() throws Exception {
         File file = new File(filepath);
         sc = new Scanner(file);
-        //如果文件存在，则追加内容；如果文件不存在，则创建文件
+        
         File f = new File(writeFilepath);
         fw = new FileWriter(f, true);
         pw = new PrintWriter(fw);
@@ -47,7 +47,7 @@ public class PrepareDataImpl implements PrepareData {
             pw.flush();
             fw.flush();
         }
-        System.out.println("节点个数为：" + max);
+        //System.out.println("Number of Nodes：" + max);
     }
 
     private static int getMaxNodeNum(Scanner sc, int cols) {
