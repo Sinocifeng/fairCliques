@@ -19,3 +19,5 @@
 
 - Related processing methods, please see `src/ChooseEdge.java`
 - If you want to modify the probability `p` of the sampling edge, please modify the parameter `probability`.
+
+Note: We use stream extensively in the code for programming. Please do not use versions lower than JDK8.
