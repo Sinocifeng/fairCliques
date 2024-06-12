@@ -24,7 +24,7 @@
 
 ### 5. Update：
 
-As requested, we updated the code for assigning node attributes during data preprocessing in June 2021. Updates:
+As requested, we updated the code for assigning node attributes during data preprocessing in June 2024. Updates:
 - file1: path-`/src/prepare/impl/GenAttrValues.java`
   > We added this file, which contains the logic code for node attribute assignment
 - file1: path-`/src/prepare/impl/PrepareDataImpl.java`
