@@ -15,9 +15,17 @@
 
 **Then**, you can run the main method in `src/Entrance.java`, which will eventually produce an `.xsl` file. Our results are all displayed in this `.xsl` file.
 
-### 4. about choosing edges with probability `p`
+### 4. About choosing edges with probability `p`
 
 - Related processing methods, please see `src/ChooseEdge.java`
 - If you want to modify the probability `p` of the sampling edge, please modify the parameter `probability`.
 
 **Note**: We use stream extensively in the code for programming. Please do not use versions lower than JDK8.
+
+### 5. Update：
+
+As requested, we updated the code for assigning node attributes during data preprocessing in June 2021. Updates:
+- file1: path-`/src/prepare/impl/GenAttrValues.java`
+  > We added this file, which contains the logic code for node attribute assignment
+- file1: path-`/src/prepare/impl/PrepareDataImpl.java`
+  > We updated the function of **getAttrValue(int i)** (line 75-86), which calls the logic codes in the ***GenAttrValues.java*** file to assign attribute values ​​to nodes.
