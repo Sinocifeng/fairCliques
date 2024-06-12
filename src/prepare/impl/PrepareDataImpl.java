@@ -74,7 +74,15 @@ public class PrepareDataImpl implements PrepareData {
 
     private static int getAttrValue(int i){
         // Here you can override your method of generating attribute values
-        return new Random().nextInt(4)+ 1;
+        GenAttrValues genAttrValues = new GenAttrValues();
+        // M1- Random attr-value
+        //     Format : [from, to]
+        int randomAttrNum = 4;
+        return genAttrValues.genAttrs_Random(randomAttrNum);
+
+        // M2 - deal attr-value
+        //     Format : [from, to, v]
+        return genAttrValues.genAttrs_method(i);
     }
 
     @Override
